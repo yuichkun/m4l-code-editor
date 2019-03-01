@@ -9,6 +9,7 @@
   "author": "Yuichi Yogo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jzz": "^0.6.9"
   }
 }

@@ -4,15 +4,15 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1372.0, 787.0 ],
+		"rect" : [ 34.0, 79.0, 862.0, 787.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -39,6 +39,20 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 375.34613037109375, 47.615386962890625, 117.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 287.34613037109375, 55.615386962890625, 101.0, 22.0 ],
+					"text" : "url http://yahoo.jp"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-20",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -49,7 +63,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -295,33 +309,40 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 237.0, 55.0, 24.0, 24.0 ]
+					"patching_rect" : [ 237.0, 55.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 89.0, 5.0, 24.0, 24.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-7",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.34613037109375, 214.615386962890625, 133.0, 22.0 ],
-					"text" : "url http://localhost:3000"
+					"patching_rect" : [ 773.34613037109375, 214.615386962890625, 133.0, 35.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 113.34613037109375, 55.615386962890625, 135.0, 22.0 ],
+					"text" : "url http://127.0.0.1:3000"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"color" : [ 0.090196078431373, 0.027450980392157, 0.027450980392157, 1.0 ],
 					"id" : "obj-4",
 					"maxclass" : "jweb",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 773.34613037109375, 273.615386962890625, 320.0, 240.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 255.34613037109375, 83.615386962890625, 164.0, 129.0 ],
 					"rendermode" : 0,
-					"url" : "http://localhost:3000/"
+					"url" : "http://127.0.0.1:3000/"
 				}
 
 			}
@@ -340,6 +361,8 @@
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 328.0, 368.884613037109375, 400.0, 220.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 83.615386962890625, 253.0, 133.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -351,7 +374,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 236.0, 209.0, 111.0, 22.0 ],
+					"patching_rect" : [ 236.0, 209.0, 165.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
@@ -360,7 +383,7 @@
 						"watch" : 0
 					}
 ,
-					"text" : "node.script index.js"
+					"text" : "node.script m4l-code-editor.js"
 				}
 
 			}
@@ -376,6 +399,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -403,6 +433,13 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "m4l-code-editor.js",
+				"bootpath" : "~/Desktop/m4l-code-editor",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "n4m.monitor.maxpat",
 				"bootpath" : "C74:/packages/Node For Max/patchers/debug-monitor",
 				"type" : "JSON",
@@ -410,6 +447,12 @@
 			}
 , 			{
 				"name" : "resize_n4m_monitor_patcher.js",
+				"bootpath" : "C74:/packages/Node For Max/patchers/debug-monitor",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fit_jweb_to_bounds.js",
 				"bootpath" : "C74:/packages/Node For Max/patchers/debug-monitor",
 				"type" : "TEXT",
 				"implicit" : 1
