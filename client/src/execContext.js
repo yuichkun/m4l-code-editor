@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-vars, no-eval */
-import { withDelay, transpose } from './utils';
+import MidiNote from './api';
 
 export default function (funcStr, midievent) {
-  window.withDelay = withDelay;
-  window.transpose = transpose;
+  window.MidiNote = MidiNote;
   const plugin = eval(funcStr);
-  // debugger;
   return plugin(midievent);
 }

@@ -1,4 +1,4 @@
-import { isNoteOff } from './utils';
+import MidiNote from './api';
 import exec from './execContext';
 import mockMaxIntf from './helpers/mockMaxIntf';
 
@@ -20,11 +20,13 @@ class App {
 
   onMidiEvent(...midievent) {
     if (this.pluginStr) {
-      if (isNoteOff(midievent)) {
-        this.midiHandler.outlet(JSON.stringify({ midievent, delay: 0 }));
+      const midiNote = MidiNote(midievent);
+      if (midiNote.isNoteOff) {
+        console.log('is note off');
+        this.midiHandler.outlet(JSON.stringify(midiNote));
         return;
       }
-      const commands = exec(this.pluginStr, midievent);
+      const commands = exec(this.pluginStr, midiNote);
       this.dump(commands);
     } else {
       alert('no plugin');
@@ -48,9 +50,9 @@ class App {
   fireMockMidiEvents() {
     const MOCK_NOTE_ON = [144, 60, 127];
     const MOCK_NOTE_OFF = [144, 60, 0];
-    this.onMidiEvent(MOCK_NOTE_ON);
+    this.onMidiEvent(...MOCK_NOTE_ON);
     setTimeout(() => {
-      this.onMidiEvent(MOCK_NOTE_OFF);
+      this.onMidiEvent(...MOCK_NOTE_OFF);
     }, 1500);
   }
 }
