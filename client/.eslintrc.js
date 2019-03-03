@@ -7,7 +7,9 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "airbnb",
+        "plugin:jest/recommended"
     ],
+    "plugins": ["jest"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
