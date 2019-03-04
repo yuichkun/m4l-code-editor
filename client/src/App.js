@@ -20,14 +20,13 @@ class App {
 
   onMidiEvent(...midievent) {
     if (this.pluginStr) {
-      const midiNote = MidiNote(midievent);
+      const midiNote = new MidiNote(midievent);
       if (midiNote.isNoteOff) {
-        console.log('is note off');
-        this.midiHandler.outlet(JSON.stringify(midiNote));
+        this.outlet(midiNote);
         return;
       }
-      const commands = exec(this.pluginStr, midiNote);
-      this.dump(commands);
+      const midiNotes = exec(this.pluginStr, midiNote);
+      this.dump(midiNotes);
     } else {
       alert('no plugin');
     }
@@ -43,8 +42,12 @@ class App {
 
   // @TODO: TypeCheck here.
   // Type must meet CommandType || Array[CommandType].
-  dump(commands) {
-    commands.forEach(command => this.midiHandler.outlet(JSON.stringify(command)));
+  dump(midiNotes) {
+    midiNotes.forEach(midiNote => this.outlet(midiNote));
+  }
+
+  outlet(midiNote) {
+    this.midiHandler.outlet(midiNote.formatAsJSON());
   }
 
   fireMockMidiEvents() {

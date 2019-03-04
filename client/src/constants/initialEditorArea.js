@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default `
 (rawNote) => {
-  const transposed = rawNote.transpose(5);
+  const transposed = MidiNote.clone(rawNote).transpose(5).delay(50);
   const notes = [rawNote, transposed];
 
   return notes;

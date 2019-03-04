@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1118.0, 182.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-29",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -233,7 +245,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -269,7 +281,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 124.65386962890625, 297.0, 50.0, 35.0 ],
-									"text" : "144 29 0"
+									"text" : "144 54 0"
 								}
 
 							}
@@ -381,7 +393,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 998.0, 349.5999755859375, 134.0, 22.0 ],
-					"text" : "midievent 144 65 0"
+					"text" : "midievent 144 90 0"
 				}
 
 			}
@@ -563,13 +575,13 @@
 					"patching_rect" : [ 1638.0, 940.33331298828125, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_longname" : "live.gain~",
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "live.gain~",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
-							"parameter_mmin" : -70.0,
-							"parameter_longname" : "live.gain~",
-							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ]
+							"parameter_mmin" : -70.0
 						}
 
 					}
@@ -953,7 +965,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1234.666748046875, 658.0, 83.0, 22.0 ],
-					"text" : "3.388446"
+					"text" : "3.568141"
 				}
 
 			}
@@ -1030,7 +1042,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 30.333333969116211, 433.21795654296875, 133.0, 23.0 ],
-					"text" : "midievent 144 65 0"
+					"text" : "midievent 144 54 0"
 				}
 
 			}
@@ -1492,6 +1504,13 @@
 					"destination" : [ "obj-29", 1 ],
 					"midpoints" : [ 1215.666748046875, 260.483306884765625, 1152.5, 260.483306884765625 ],
 					"source" : [ "obj-104", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-88", 0 ],
+					"source" : [ "obj-13", 0 ]
 				}
 
 			}
