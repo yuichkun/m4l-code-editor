@@ -4382,6 +4382,11 @@ monaco-editor@^0.15.6:
   resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.15.6.tgz#d63b3b06f86f803464f003b252627c3eb4a09483"
   integrity sha512-JoU9V9k6KqT9R9Tiw1RTU8ohZ+Xnf9DMg6Ktqqw5hILumwmq7xqa/KLXw513uTUsWbhtnHoSJYYR++u3pkyxJg==
 
+monaco-vim@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/monaco-vim/-/monaco-vim-0.0.11.tgz#489ed0aa2d684d44718dcef423834b7a7087ebf5"
+  integrity sha512-ls/5o766BiNfONuF8EqY2aG5lzvE33a+kPc0WZbyjJIXvFxknR+XwEyLxVoGt7E0oGeGmW/mrefTnpk0iJ8t3A==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"

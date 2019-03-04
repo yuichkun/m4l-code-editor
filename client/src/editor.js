@@ -32,7 +32,10 @@ self.MonacoEnvironment = {
   },
 };
 
+import { initVimMode } from 'monaco-vim';
+const statusNode = document.getElementById('status1');
 const editor = monaco.editor.create(document.getElementById('editor'), editorConstructorOptions);
+initVimMode(editor, statusNode);
 
 editor.addCommand(KeyMod.chord(KeyMod.Shift | KeyCode.Enter), () => {
   const funcStr = editor.getValue();
